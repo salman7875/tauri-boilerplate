@@ -1,6 +1,7 @@
 import { downloadPCRX } from "../../api/request";
 import { readTextFile, writeFile } from "@tauri-apps/plugin-fs";
-import { resolveResource } from "@tauri-apps/api/path";
+
+import { resourceDir, appDataDir, executableDir } from '@tauri-apps/api/path';
 
 export default function AgentRow({ agent, index }) {
   const handlePCRXdownload = async () => {
