@@ -1,4 +1,5 @@
 import AgentTable from "../components/agent/agent-table";
+import Header from "../components/ui/header";
 import Pagination from "../components/ui/pagination";
 import { useAgent } from "../hooks/use-agent";
 
@@ -7,13 +8,7 @@ export default function Agents() {
 
   return (
     <div className="flex min-h-screen flex-col bg-gray-50 p-8">
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Agents Directory</h1>
-        <p className="mt-1 text-sm text-gray-500">
-          A complete list of agents in the system
-        </p>
-      </header>
-
+      <Header />
       <AgentTable agents={data} loading={loading} />
 
       <Pagination

@@ -5,7 +5,7 @@ import Agents from "./pages/agents";
 import NotFound from "./pages/not-found";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Navigate to="agent" replace /> },
+  { path: "/", element: <Navigate to="signin" replace /> },
   { path: "/signin", Component: Signin },
   {
     path: "/agent",

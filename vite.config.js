@@ -7,8 +7,15 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     strictPort: true,
-    port: 5174,
+    port: 5173,
     host: "localhost",
+    proxy: {
+      "/dev": {
+        target: "https://alt-pi.in",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
   clearScreen: false,
 });

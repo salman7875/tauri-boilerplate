@@ -8,8 +8,7 @@ export default function AgentTable({ agents, loading }) {
           <tr>
             <th className="px-6 py-3 text-left font-medium">ID</th>
             <th className="px-6 py-3 text-left font-medium">Name</th>
-            <th className="px-6 py-3 text-left font-medium">Email</th>
-            <th className="px-6 py-3 text-left font-medium">Role</th>
+            <th className="px-6 py-3 text-left font-medium">Mobile No</th>
             <th className="px-6 py-3 text-right font-medium">Action</th>
           </tr>
         </thead>
@@ -22,7 +21,7 @@ export default function AgentTable({ agents, loading }) {
             </tr>
           ) : (
             agents.map((agent, i) => (
-              <AgentRow key={agent.id} agent={agent} index={i} />
+              <AgentRow key={i} agent={agent} index={i} />
             ))
           )}
         </tbody>
