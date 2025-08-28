@@ -1,0 +1,97 @@
+/* Auth Layout */
+.auth-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full screen */
+  width: 100vw;
+  background: linear-gradient(
+    to bottom right,
+    #f3f4f6,
+    #e5e7eb
+  ); /* gradient from gray-100 to gray-200 */
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 28rem; /* max-w-md */
+  background-color: #ffffff;
+  border-radius: 1rem; /* rounded-2xl */
+  padding: 2.5rem; /* p-10 */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* shadow-xl */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+}
+
+/* Auth Header */
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+.auth-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem; /* h-14 */
+  width: 3.5rem; /* w-14 */
+  margin: 0 auto 1rem auto; /* mx-auto mb-4 */
+  border-radius: 50%; /* rounded-full */
+  background-color: #2563eb; /* bg-blue-600 */
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+}
+
+.auth-logo-text {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+}
+
+.auth-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  color: #111827; /* text-gray-900 */
+  margin: 0;
+}
+
+.auth-subtitle {
+  margin-top: 0.25rem; /* mt-1 */
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280; /* text-gray-500 */
+}
+
+/* Auth Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.625rem 0; /* py-2.5 */
+  background-color: #2563eb; /* bg-blue-600 */
+  color: #ffffff;
+  font-weight: 600; /* font-semibold */
+  border-radius: 0.5rem; /* rounded-lg */
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  transition: background-color 0.2s ease;
+}
+
+.auth-button:hover {
+  background-color: #1e40af; /* hover:bg-blue-700 */
+}
+
+.auth-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5); /* focus:ring-2 focus:ring-blue-500 */
+}
+
+/* Auth Footer */
+.auth-footer {
+  margin-top: 2rem; /* mt-8 */
+  text-align: center;
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280; /* text-gray-500 */
+}

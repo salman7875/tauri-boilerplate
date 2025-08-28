@@ -1,0 +1,71 @@
+/* Header container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem; /* mb-8 */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 1rem; /* rounded-2xl */
+  background: linear-gradient(
+    90deg,
+    #4f46e5,
+    #8b5cf6,
+    #ec4899
+  ); /* from-indigo-600 via-purple-600 to-pink-500 */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
+}
+
+/* Left side (title + subtitle) */
+.header-left {
+}
+
+.header-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 800; /* font-extrabold */
+  letter-spacing: -0.025em; /* tracking-tight */
+  color: #ffffff; /* text-white */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); /* drop-shadow-lg */
+  margin: 0;
+}
+
+.header-subtitle {
+  margin-top: 0.25rem; /* mt-1 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  color: #e0e7ff; /* text-indigo-100 */
+}
+
+/* Logout button */
+.logout-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+  padding: 0.625rem 1.25rem; /* py-2.5 px-5 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+  color: #1f2937; /* text-gray-800 */
+  background-color: rgba(255, 255, 255, 0.9); /* bg-white/90 */
+  border: none;
+  border-radius: 0.75rem; /* rounded-xl */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #ffffff;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* hover:shadow-xl */
+  transform: translateY(-2px); /* hover:-translate-y-0.5 */
+}
+
+/* Logout icon */
+.logout-icon {
+  width: 1.25rem; /* h-5 w-5 */
+  height: 1.25rem;
+  color: #4b5563; /* text-gray-600 */
+  transition: color 0.3s ease;
+}
+
+.logout-button:hover .logout-icon {
+  color: #ef4444; /* text-red-500 */
+}

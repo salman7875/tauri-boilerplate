@@ -1,0 +1,32 @@
+.input-container {
+  display: block;
+  margin-bottom: 1rem; /* spacing between inputs */
+}
+
+.input-label {
+  display: block;
+  font-size: 0.875rem; /* text-sm in Tailwind */
+  font-weight: 500; /* font-medium in Tailwind */
+  color: #4b5563; /* gray-700 */
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem 1rem; /* py-2 px-4 */
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  color: #111827; /* text-gray-900 */
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-field::placeholder {
+  color: #9ca3af; /* placeholder-gray-400 */
+}
+
+.input-field:focus {
+  border-color: #2563eb; /* focus:border-blue-600 */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* focus:ring-2 focus:ring-blue-500 */
+}
