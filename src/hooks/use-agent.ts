@@ -19,9 +19,11 @@ export const useAgent = () => {
 
       const scrollReportData = await getScrollReports();
 
+      console.log(scrollReportData, resData);
+
       const approvedReportsMap = new Map(
         scrollReportData.data
-          .filter((report: any) => report.status === "approved" || "completed")
+          .filter((report: any) => report.status === "approved")
           .map((report: any) => [report.collection_agent_id, report.id])
       );
 
@@ -29,6 +31,8 @@ export const useAgent = () => {
         ...agent,
         scrollReportId: approvedReportsMap.get(agent.uid) || null,
       }));
+
+      console.log(enrichedAgents);
 
       setData(enrichedAgents);
       setTotal(enrichedAgents.length);

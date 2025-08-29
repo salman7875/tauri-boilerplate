@@ -10,12 +10,15 @@ export function signin({ userName, password }: any) {
 export function getAgents(partyCode: string, limit = false) {
   const token = window.localStorage.getItem("token");
 
-  return apiFetch(`/dashboard/user?partyCode=${partyCode}&limit=${limit}`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  return apiFetch(
+    `/dashboard/user?partyCode=${partyCode}&limit=${limit}&onlyCA=${true}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 }
 export function getScrollReports() {
   const token = window.localStorage.getItem("token");
@@ -29,19 +32,31 @@ export function getScrollReports() {
   });
 }
 
-export function uploadPCTX({ pctx_file, scrollReportId }: any) {
+export async function uploadPCTX({ pctx_file, scrollReportId }: any) {
   const token = window.localStorage.getItem("token");
 
-  return apiFetch(`/scroll-report/upload-pctx`, {
+  console.log(pctx_file, scrollReportId);
+
+  const formData = new FormData();
+  formData.append("pctx_file", pctx_file);
+  formData.append("scrollReportId", scrollReportId);
+
+  const res = await fetch(`${API_BASE_URL}/scroll-report/upload-pctx`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
     },
-    body: { pctx_file, scrollReportId },
+    body: formData,
   });
+
+  if (!res.ok) {
+    throw new Error("Failed to upload PCTX");
+  }
+
+  return res.json();
 }
 
-export async function downloadPCRX({ fileType = "pcrx", scrollReportId }: any) {
+export async function downloadPCRX({ scrollReportId }: any) {
   const token = window.localStorage.getItem("token");
 
   const response = await fetch(`${API_BASE_URL}/scroll-report/getbyid`, {
@@ -51,7 +66,12 @@ export async function downloadPCRX({ fileType = "pcrx", scrollReportId }: any) {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ fileType, scrollReportId }),
+    body: JSON.stringify({
+      deposit_receipt: false,
+      pcrx: true,
+      pctx: false,
+      scrollReportId,
+    }),
   });
 
   if (!response.ok) throw new Error("Failed to download file");
